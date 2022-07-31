@@ -1,0 +1,10 @@
+.movies {
+    color:rgb(255, 77, 0);
+    font-size: 16px;
+}
+
+.movies h3 {
+    text-align: center;
+    color: black;
+    font-size: 30px;
+}
