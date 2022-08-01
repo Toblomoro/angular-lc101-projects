@@ -1,0 +1,9 @@
+.chores{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: forestgreen;
+}
+.chores h3{
+    text-decoration: underline;
+    font-style: italic;
+    
+}
