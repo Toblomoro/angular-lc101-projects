@@ -1,6 +1,14 @@
 .movies {
     color: blueviolet;
     font-size: 16px;
+    border-left: 4px dotted #4b42f5;
+    border-right: 4px dotted #4b42f5;
+        height: 450px;
+        position: absolute;
+        left: 50%;
+        margin-left: 3px;
+        margin-right: 3px;
+        top: 0;
 }
 
 .movies h3 {
