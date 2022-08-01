@@ -3,3 +3,7 @@
     color: rgb(224, 73, 9);
     font-size: 15px;
 }
+.gif{
+ max-width: 10%;
+ max-height: 10%;   
+}
