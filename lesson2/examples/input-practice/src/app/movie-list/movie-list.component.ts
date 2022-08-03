@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Alert } from 'selenium-webdriver';
 
 @Component({
    selector: 'movie-list',
@@ -11,5 +12,12 @@ export class MovieListComponent implements OnInit {
    constructor() { }
 
    ngOnInit() {
+   }
+   addMovie (newTitle: string) {
+      if(!this.movies.includes(newTitle)){
+         this.movies.push(newTitle);
+      } 
+         
+      
    }
 }
