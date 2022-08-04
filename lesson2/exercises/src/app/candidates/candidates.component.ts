@@ -22,6 +22,10 @@ export class CandidatesComponent implements OnInit {
 
   ngOnInit() {
   }
+  addToCrew (newCrew: Object) {
+    
+       this.candidates.push(this.crew);
+    } 
 
   // Code the addToCrew function here:
 
