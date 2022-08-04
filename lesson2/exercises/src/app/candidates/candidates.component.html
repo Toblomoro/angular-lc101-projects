@@ -33,17 +33,19 @@
 
     <div class="crew col-3">
       <h2>Selected Crew</h2>
-      <ul >
+      <ul>
         <li *ngFor="let member of crew">{{ member.name }}</li>
-        <button (click)="addToCrew('')" *ngIf = "crew.length !== 0">Clear Crew List</button>
-      </ul >
+        <button (click)="crew = []" *ngIf="crew.length !== 0">
+          Clear Crew List
+        </button>
+      </ul>
       <!-- Add a "Clear Crew List" button here. -->
-    </div >
+    </div>
   </div>
   <hr />
   <div class="centered">
     <button (click)="selected = false">Clear Data & Image</button>
-    <button (click)="addToCrew(selected.value)">Send on Mission.</button>
+    <button (click)="addToCrew(selected.value)" *ngIf = "selected && !crew.includes(selected) && crew.length !== 3">Send on Mission.</button>
     <!-- Add a "Send on Mission" button here. -->
   </div>
 </div>
