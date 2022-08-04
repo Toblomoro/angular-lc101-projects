@@ -25,14 +25,10 @@ export class CandidatesComponent implements OnInit {
   addToCrew(person: object) {
  
       this.crew.push(person) 
-    
-   
-    //TODO: complete the function!
- }
+}
   // Code the addToCrew function here:
 
 
   // BONUS: Code the changeMissionName function here:
-
-
+ 
 }
