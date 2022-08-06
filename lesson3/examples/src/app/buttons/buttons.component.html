@@ -1,21 +1,41 @@
-<div class="buttons">
-   <h3>{{buttonHeading}}</h3>
-   <button [class.gold]="buttonState[0]" [disabled]="!buttonState[0]" (click)="buttonState[0] = false">Gold</button> <br>
-   <button [class.silver]="buttonState[1]" [disabled]="!buttonState[1]" (click)="buttonState[1] = false">Silver</button> <br>
-   <button [class.copper]="buttonState[2]" [disabled]="!buttonState[2]" (click)="buttonState[2] = false">Copper</button> <hr>
-   <button (click)="reactivateButtons()">Reactivate Buttons</button>
-</div>
-<hr>
 
-<div class="buttons">
-   <h3>Joke {{buttonHeading}}</h3>
- 
-   <div (mouseout)="active = true">
-      <button [class.gold]="active" [disabled]="!active" (mouseover)="active = false">Examine buttons.component.html</button>
+<div class="container">
+   <div class="container-header">
+      <h1>Flight Simulator</h1>
+      <h2>Current Flight Status</h2>
+      <p>{{flightStatus}}</p>
+      <h2>Shuttle Trajectory</h2>
    </div>
+   <div class="row justify-content-center">
+      <div class="col-3">
+         <div class="container-left">
+            <h3>Fuel Levels</h3>
+            <p>Tank Full</p>
+            <h3>Astronaut Chat</h3>
+            <p>Houston, we are ready when you are!</p>
+         </div>
+      </div>
 
-   <hr>
-   <div [align]="location" (mouseover)="location = shiftLocation(location)">
-      <button class="silver">Catch Me!</button>
+      <div class="col-6">
+         <div class="shuttle-background" [style.background-color] = "boxColor">
+            <img #rocket src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
+         </div>
+      </div>
+
+      <div class="col-3">
+         <div class="container-right"b>
+            <button>Up</button>
+            <button>Down</button>
+            <button>Right</button>
+            <button>Left</button>
+            <h3>Space Shuttle Height</h3>
+            <p>{{shuttleHeight}}km</p>
+         </div>
+      </div>
+   </div>
+   <div class="container-control-buttons">
+      <button [class.shuttleControl] (click)="takeOff(); flight=!flight"[disabled] = "!flight">Take Off</button>
+      <button (click)="land();flight=!flight"[disabled] = "flight" >Land</button>
+      <button (click)="abortMission();flight=!flight"[disabled] = "flight" >Abort Mission</button>
    </div>
 </div>
