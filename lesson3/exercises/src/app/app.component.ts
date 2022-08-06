@@ -23,6 +23,8 @@ export class AppComponent {
   topBorder = false
   bottomBorder = false
 
+  takeOffEnabled: boolean = true;
+
 xPosition = '115px'
 yPosition = '0px'
 
@@ -36,22 +38,25 @@ yPosition = '0px'
     }
   }
 
-  land() {
+  land(rocketImage) {
     alert("The shuttle is landing. Landing gear engaged.")
     this.flightStatus = "The shuttle has landed.";
       this.shuttleHeight = 0;
       this.boxColor = "green";
       this.flight = false;
-      
-  
+      rocketImage.style.bottom = '0px';
+      rocketImage.style.left = '0px';
 
   }
-  abortMission(){
+  abortMission(rocketImage){
     confirm("Confirm you would like to abort the mission")
     if (true) {
       this.flightStatus = "Mission aborted.";
       this.shuttleHeight = 0;
       this.boxColor = "red";
+      rocketImage.style.bottom = '0px';
+      rocketImage.style.left = '0px';
+
     }
   }
   moveRocket(rocketImage, direction) {

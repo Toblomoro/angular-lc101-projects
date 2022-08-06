@@ -36,9 +36,9 @@
          </div>
       </div>
    </div>
-   <div class="container-control-buttons">
+   <div class="container-control-buttons" *ngIf="takeOffEnabled">
       <button [class.shuttleControl] (click)="takeOff(); flight=!flight"[disabled] = "!flight">Take Off</button>
-      <button (click)="land();flight=!flight"[disabled] = "flight" >Land</button>
-      <button (click)="abortMission();flight=!flight"[disabled] = "flight" >Abort Mission</button>
+      <button (click)="land(rocketImage);flight=!flight"[disabled] = "flight" >Land</button>
+      <button (click)="abortMission(rocketImage);flight=!flight"[disabled] = "flight" >Abort Mission</button>
    </div>
 </div>
