@@ -32,6 +32,7 @@ yPosition = '0px'
       this.flightStatus = "Shuttle in flight";
       this.shuttleHeight = 10000;
       this.boxColor = "blue";
+     
     }
   }
 
@@ -40,6 +41,10 @@ yPosition = '0px'
     this.flightStatus = "The shuttle has landed.";
       this.shuttleHeight = 0;
       this.boxColor = "green";
+      this.flight = false;
+      
+  
+
   }
   abortMission(){
     confirm("Confirm you would like to abort the mission")
@@ -49,48 +54,25 @@ yPosition = '0px'
       this.boxColor = "red";
     }
   }
-
-  shuttleMovement(shuttleBackground, direction) : any {
-    let maxHeight = parseInt(shuttleBackground.getBoundingClientRect().height);
-    let maxWidth = parseInt(shuttleBackground.getBoundingClientRect().width);
-    if (direction === "right") {
-      if (parseInt(this.xPosition) >= maxWidth - 80) {
-         
-          this.rightBorder = true;
-      } else {
-        let movement = parseInt(this.xPosition) + 10 +'px';
-        this.xPosition= movement;
-        this.leftBorder= false
-      }
-
+  moveRocket(rocketImage, direction) {
+    if (direction === 'right') {
+       let movement = parseInt(rocketImage.style.left) + 10 + 'px';
+       rocketImage.style.left = movement;
+       this.width = this.width + 10000;
     } else if (direction === 'left') {
-      if (parseInt(this.xPosition) === 0){
-        this.leftBorder = true
-      } else {
-        let movement = parseInt(this.xPosition) - 10 + 'px';
-        this.xPosition = movement;
-        this.rightBorder = false
-      } 
-        } else if (direction === 'up') {
-          if (parseInt(this.yPosition) >= maxHeight - 80) {
-            this.topBorder = true
-          } else {
-            let movement = parseInt(this.yPosition) + 10 +'px';
-            this.yPosition = movement;
-            this.shuttleHeight += 1000;
-            this.bottomBorder = false;
-          }
-        }else if (direction === 'down') {
-          if (parseInt(this.yPosition)=== 0){
-           this.bottomBorder= true; 
-          } else {
-            let movement = parseInt(this.yPosition)- 10 +'px';
-            this.yPosition = movement;
-            this.shuttleHeight -= 1000;
-            this.topBorder = false;
-          }
-        }
- 
+      let movement = parseInt(rocketImage.style.left) - 10 + 'px';
+      rocketImage.style.left = movement;
+      this.width= this.width - 10000;
+    } else if (direction === 'down') {
+      let movement = parseInt(rocketImage.style.bottom) - 10 + 'px';
+      rocketImage.style.bottom = movement;
+      this.shuttleHeight = this.shuttleHeight - 10000;
+    } else {
+      let movement = parseInt(rocketImage.style.bottom) + 10 + 'px';
+      rocketImage.style.bottom = movement;
+      this.shuttleHeight = this.shuttleHeight + 10000;
+    } 
+ } 
 
 }
-}
+

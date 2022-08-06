@@ -20,16 +20,17 @@
 
       <div class="col-6">
          <div #shuttleBackground class="shuttle-background" [style.background-color] = "boxColor">
-            <img #rocket src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="xPosition" [style.bottom]="yPosition"/>
+            <img #rocketImage src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="xPosition" [style.bottom]="yPosition"/>
          </div>
       </div>
 
       <div class="col-3">
          <div class="container-right"b>
-            <button class="directionButton" (click)="shuttleMovement(shuttleBackground, 'up')" [disabled]="topBorder">Up</button>
-            <button class="directionButton" (click)="shuttleMovement(shuttleBackground, 'down')" [disabled]="bottomBorder">Down</button>
-            <button class="directionButton" (click)="shuttleMovement(shuttleBackground, 'right')" [disabled]="rightBorder">Right</button>
-            <button class="directionButton" (click)="shuttleMovement(shuttleBackground, 'left')" [disabled]="leftBorder">Left</button>
+            <button (click)="moveRocket(rocketImage, 'up')">Up</button>
+            <button (click)="moveRocket(rocketImage, 'down')">Down</button>
+            <button (click)="moveRocket(rocketImage, 'right')">Right</button>
+            <button (click)="moveRocket(rocketImage, 'left')">Left</button>
+
             <h3>Space Shuttle Height</h3>
             <p>{{shuttleHeight}}km</p>
          </div>
