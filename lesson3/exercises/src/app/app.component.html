@@ -16,7 +16,7 @@
       </div>
 
       <div class="col-6">
-         <div class="shuttle-background" style="background-color: green">
+         <div class="shuttle-background" [style.background-color] = "boxColor">
             <img src="assets/images/LaunchCode_rocketline_white.png" height = "75" width = "75" [style.left]="0" [style.bottom]="0"/>
          </div>
       </div>
@@ -33,8 +33,8 @@
       </div>
    </div>
    <div class="container-control-buttons">
-      <button >Take Off</button>
-      <button >Land</button>
-      <button >Abort Mission</button>
+      <button [class.shuttleControl] (click)="takeOff(); flight=!flight"[disabled] = "!flight">Take Off</button>
+      <button (click)="land();flight=!flight"[disabled] = "flight" >Land</button>
+      <button (click)="abortMission();flight=!flight"[disabled] = "flight" >Abort Mission</button>
    </div>
 </div>

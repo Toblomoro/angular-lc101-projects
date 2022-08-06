@@ -8,19 +8,22 @@ import { Component } from "@angular/core";
 export class AppComponent {
   title = "Exercises: Angular Lesson 3";
 
-  color = "green";
+  color = "#15af39";
   height = 0;
   width = 0;
 
-  flightStatus = "Space shuttle ready for takeoff!";
-  shuttleHeight = 0;
+  flightStatus: string = "Space shuttle ready for takeoff!";
+  shuttleHeight: number = 0;
+  flight = true
+  
+  boxColor= "#15af39"
 
   takeOff() {
     confirm("Confirm that the shuttle is ready for takeoff.");
     if (true) {
       this.flightStatus = "Shuttle in flight";
       this.shuttleHeight = 10000;
-      this.color = "blue";
+      this.boxColor = "blue";
     }
   }
 
@@ -28,14 +31,14 @@ export class AppComponent {
     alert("The shuttle is landing. Landing gear engaged.")
     this.flightStatus = "The shuttle has landed.";
       this.shuttleHeight = 0;
-      this.color = "green";
+      this.boxColor = "green";
   }
   abortMission(){
     confirm("Confirm you would like to abort the mission")
     if (true) {
       this.flightStatus = "Mission aborted.";
       this.shuttleHeight = 0;
-      this.color = "red";
+      this.boxColor = "red";
     }
   }
 }
