@@ -59,6 +59,13 @@ yPosition = '0px'
 
     }
   }
+  gutterCheck(width, height) {
+    if (width > 260000 || width < 0 || height < 0 || height > 340000) {
+      this.color = 'orange';
+    } else {
+      this.color = 'blue';
+    }
+  }
   moveRocket(rocketImage, direction) {
     if (direction === 'right') {
        let movement = parseInt(rocketImage.style.left) + 10 + 'px';
@@ -77,7 +84,10 @@ yPosition = '0px'
       rocketImage.style.bottom = movement;
       this.shuttleHeight = this.shuttleHeight + 10000;
     } 
- } 
+   
+    this.gutterCheck(this.width, this.height);
+  }
+ }
 
-}
+
 

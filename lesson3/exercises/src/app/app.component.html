@@ -25,7 +25,7 @@
       </div>
 
       <div class="col-3">
-         <div class="container-right"b>
+         <div class="container-right"b *ngIf = '!flight' >
             <button (click)="moveRocket(rocketImage, 'up')">Up</button>
             <button (click)="moveRocket(rocketImage, 'down')">Down</button>
             <button (click)="moveRocket(rocketImage, 'right')">Right</button>
